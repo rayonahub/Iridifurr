@@ -6,21 +6,21 @@ const sendButton = document.getElementById('send-button');
 sendButton.addEventListener('click', () => {
 const userInputValue = userInput.value.trim();
 if (userInputValue!== '') {
-// Process user input and generate response
 const response = generateResponse(userInputValue);
-addMessageToChatLog(userInputValue, response);
+displayResponse(response);
 userInput.value = '';
 }
 });
 
 function generateResponse(userInput) {
-  const response = userInput.toLowerCase();
+// TO DO: Implement AI response generation logic here
+const response = `Hello, World!`;
+return response;
+}
 
-  if (response.includes("hello") || response.includes("hi")) {
-    return "Hello, World!";
-  } else if (response.includes("how are you")) {
-    return "I'm doing great, thanks for asking!";
-  } else {
-    return "I'm not sure I understand. Can you please rephrase?";
-  }
+function displayResponse(response) {
+const responseElement = document.createElement('p');
+responseElement.textContent = response;
+responseElement.className = 'ray-response';
+chatContainer.appendChild(responseElement);
 }
