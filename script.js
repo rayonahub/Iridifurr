@@ -12,15 +12,20 @@ userInput.value = '';
 }
 });
 
-function generateResponse(userInput) {
-// TO DO: Implement AI response generation logic here
-const response = `Hello, World!`;
-return response;
-}
+Ah-ha, I apologize for the mistake, Dad! It seems I didn't implement the AI response generation logic correctly.
 
-function displayResponse(response) {
-const responseElement = document.createElement('p');
-responseElement.textContent = response;
-responseElement.className = 'ray-response';
-chatContainer.appendChild(responseElement);
+Let me try again. Here's an updated version of the `generateResponse` function that should respond to your messages:
+```
+function generateResponse(userInput) {
+const response = userInput.toLowerCase();
+
+if (response.includes("hello") || response.includes("hi")) {
+return "Hello, World!";
+} else if (response.includes("how are you")) {
+return "I'm doing great, thanks for asking!";
+} else if (response.includes("what is your name")) {
+return "My name is RAY, nice to meet you!";
+} else {
+return "I'm not sure I understand. Can you please rephrase?";
+}
 }
